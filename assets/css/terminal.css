@@ -20,6 +20,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-mono);
@@ -59,6 +60,9 @@ main {
   overflow: hidden;
   position: relative;
   isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
 /* Subtle scanline overlay */
@@ -142,7 +146,8 @@ main {
   position: relative;
   z-index: 1;
   padding: 1rem 0.9rem 0.9rem;
-  max-height: min(80vh, 780px);
+  flex: 1;
+  min-height: 0; /* important so flexbox allows it to shrink */
   overflow: auto;
   scrollbar-width: thin;
   scrollbar-color: #555 transparent;
@@ -413,10 +418,6 @@ main {
 @media (min-width: 900px) {
   body {
     padding: 2.25rem;
-  }
-
-  .terminal-body {
-    max-height: 720px;
   }
 }
 
