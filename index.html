@@ -105,17 +105,36 @@
     <!-- Slide-out panel placeholder for future video reel / animations -->
     <aside class="demo-panel" id="demo-panel" aria-label="Demo panel">
       <div class="demo-panel-title">demo reel — coming soon</div>
+
+      <div class="demo-video-wrapper">
+        <video
+          id="demo-video"
+          class="demo-video"
+          autoplay
+          muted
+          loop
+          playsinline
+        >
+          <source
+            src="assets/media/Dark-mode_terminal_interface_booting_up_smooth_camera_move_into_abstract_server_racks_with_blinking_seed4085283224.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
       <div class="demo-panel-body">
-        This terminal will eventually trigger a slide-out panel with short clips
-        of real systems you've built:
+        This terminal will eventually trigger a media reel with short clips of
+        real systems you've built:
         <br /><br />
         • secure-media-lab: secure home lab + remote stack<br />
         • graylogic-erp-site: live Odoo 18 ERP for your electrical business<br />
-        • usb-verifier & ssh-login-helper in use<br />
+        • usb-verifier &amp; ssh-login-helper in use<br />
         • Clamp-to-cloud 100A energy monitor (Phase 0)
         <br /><br />
         For now, run <code>projects</code> to explore the code.
       </div>
+
       <div class="demo-panel-footer">
         <button type="button" class="btn-ghost" id="demo-close">close</button>
       </div>

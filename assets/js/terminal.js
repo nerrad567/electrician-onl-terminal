@@ -315,14 +315,26 @@ On mobile, tap the chips under the prompt to run commands quickly.`,
 
   function toggleDemoPanel(forceVisible) {
     if (!demoPanel) return;
+    const video = document.getElementById("demo-video");
+
     const shouldShow =
       typeof forceVisible === "boolean"
         ? forceVisible
         : !demoPanel.classList.contains("is-visible");
+
     if (shouldShow) {
       demoPanel.classList.add("is-visible");
+      if (video) {
+        video.play().catch(() => {
+          // ignore autoplay failures (mobile etc.)
+        });
+      }
     } else {
       demoPanel.classList.remove("is-visible");
+      if (video) {
+        video.pause();
+        video.currentTime = 0;
+      }
     }
   }
 
