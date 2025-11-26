@@ -1,0 +1,191 @@
+############################
+# OS / File system cruft
+############################
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+Desktop.ini
+$RECYCLE.BIN/
+ehthumbs.db
+ehthumbs_vista.db
+
+# Linux
+.*.swp
+.*.swo
+
+############################
+# Editors / IDEs
+############################
+.vscode/
+.vscode-test/
+.idea/
+*.code-workspace
+.history/
+*.sublime-*
+*.iml
+
+############################
+# Logs / Debug / Temp
+############################
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.pid
+*.seed
+*.pid.lock
+debug/
+logs/
+tmp/
+temp/
+
+############################
+# Node / Frontend tooling
+############################
+node_modules/
+bower_components/
+jspm_packages/
+.yarn/
+.yarn-cache/
+.pnp.*
+.npm/
+dist/
+build/
+.cache/
+.nyc_output/
+coverage/
+.parcel-cache/
+.next/
+out/
+.sass-cache/
+.storybook-static/
+*.tsbuildinfo
+
+############################
+# Python (if you add scripts)
+############################
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+.tox/
+.nox/
+.mypy_cache/
+.pytest_cache/
+.coverage
+coverage.*
+.pyre/
+.pytype/
+.dmypy.json
+dmypy.json
+
+############################
+# Docker / Containers
+############################
+# local env files for containers
+.env
+.env.*
+.env.docker
+.docker/
+docker-compose.override.yml
+
+# local volumes / data dirs (tune per-project)
+data/
+volumes/
+db-data/
+redis-data/
+pg-data/
+
+############################
+# Secrets / Credentials (aggressive)
+############################
+# generic env/secret/credential patterns
+*secret*
+*secrets*
+*credential*
+*credentials*
+*password*
+*passwd*
+*token*
+*tokens*
+
+# common secret file types
+*.key
+*.pem
+*.crt
+*.cer
+*.pfx
+*.p12
+*.jks
+*.keystore
+*.gpg
+*.asc
+*.age
+*.kdbx
+*.sqlite
+*.sqlite3
+*.db
+
+# SSH keys (never commit these)
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+id_ecdsa
+id_ecdsa.*
+id_dsa
+id_dsa.*
+
+############################
+# Tooling / Misc
+############################
+# Git
+.gitconfig.local
+.git-credentials
+.gitignore.local
+
+# Linters / formatters / analyzers
+.eslintcache
+.stylelintcache
+.prettier-cache
+.mypy_cache/
+.pylint.d/
+
+# package managers
+package-lock.json*
+npm-shrinkwrap.json*
+yarn.lock
+pnpm-lock.yaml
+
+############################
+# Project-specific
+############################
+# If you add a build step for this terminal site and output to /public or /docs,
+# uncomment one of these:
+# public/
+# docs/

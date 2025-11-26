@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Darren Gray | Electrician → DevOps / Infra</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Terminal-style CV for Darren Gray, an electrician running real production stacks and moving into DevOps / infrastructure."
+    />
+    <link rel="stylesheet" href="assets/css/terminal.css" />
+  </head>
+  <body>
+    <main>
+      <section
+        class="terminal-shell"
+        aria-label="Interactive terminal-style CV"
+      >
+        <header class="terminal-header">
+          <div class="terminal-dots" aria-hidden="true">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+          </div>
+          <div class="terminal-title">
+            terminal.electrician.onl — interactive CV
+          </div>
+          <div class="terminal-header-right">Darren&nbsp;Gray</div>
+        </header>
+
+        <div
+          class="terminal-body"
+          id="terminal-output"
+          role="log"
+          aria-live="polite"
+          aria-label="Terminal output"
+        >
+          <!-- JS populates this -->
+        </div>
+
+        <div class="prompt-row">
+          <form class="prompt-form" id="command-form" autocomplete="off">
+            <div class="prompt-label" aria-hidden="true">
+              <span class="prompt-user">darren@electrician</span>:<span
+                class="prompt-path"
+                >~</span
+              >$
+              <span class="prompt-cursor blink">▌</span>
+            </div>
+            <div class="prompt-input-wrapper">
+              <label class="sr-only" for="command-input">Type a command</label>
+              <input
+                id="command-input"
+                class="prompt-input"
+                name="command"
+                type="text"
+                spellcheck="false"
+                autocomplete="off"
+                placeholder="Type 'help' to explore (about, skills, projects, contact...)"
+              />
+              <p class="prompt-hint">↑↓ to browse history • Enter to run</p>
+            </div>
+          </form>
+
+          <div class="command-suggestions" aria-label="Suggested commands">
+            <button type="button" class="command-chip" data-command="about">
+              about <span>who is darren?</span>
+            </button>
+            <button type="button" class="command-chip" data-command="skills">
+              skills <span>what can he do?</span>
+            </button>
+            <button
+              type="button"
+              class="command-chip"
+              data-command="experience"
+            >
+              experience <span>real-world work</span>
+            </button>
+            <button type="button" class="command-chip" data-command="projects">
+              projects <span>github highlights</span>
+            </button>
+            <button type="button" class="command-chip" data-command="cv">
+              cv <span>role-ready snapshot</span>
+            </button>
+            <button type="button" class="command-chip" data-command="contact">
+              contact <span>reach out</span>
+            </button>
+            <button type="button" class="command-chip" data-command="demo">
+              demo <span>future video panel</span>
+            </button>
+            <button type="button" class="command-chip" data-command="clear">
+              clear <span>clean the screen</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Slide-out panel placeholder for future video reel / animations -->
+    <aside class="demo-panel" id="demo-panel" aria-label="Demo panel">
+      <div class="demo-panel-title">demo reel — coming soon</div>
+      <div class="demo-panel-body">
+        This terminal will eventually trigger a slide-out panel with short clips
+        of real systems you've built:
+        <br /><br />
+        • secure-media-lab: secure home lab + remote stack<br />
+        • graylogic-erp-site: live Odoo ERP for your electrical business<br />
+        • usb-verifier & ssh-login-helper in use
+        <br /><br />
+        For now, run <code>projects</code> to explore the code.
+      </div>
+      <div class="demo-panel-footer">
+        <button type="button" class="btn-ghost" id="demo-close">close</button>
+      </div>
+    </aside>
+
+    <script src="assets/js/terminal.js"></script>
+  </body>
+</html>
