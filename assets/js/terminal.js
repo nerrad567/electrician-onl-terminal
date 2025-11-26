@@ -203,7 +203,44 @@ On mobile, tap the chips under the prompt to run commands quickly.`,
   function createLine(text, className) {
     const line = document.createElement("div");
     line.className = "line" + (className ? " " + className : "");
-    line.textContent = text;
+
+    const str = String(text || "");
+
+    if (!str.trim().length) {
+      // Blank line
+      return line;
+    }
+
+    // Simple URL matcher for http(s) links
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    let lastIndex = 0;
+    let match;
+
+    while ((match = urlRegex.exec(str)) !== null) {
+      // Text before the URL
+      if (match.index > lastIndex) {
+        line.appendChild(
+          document.createTextNode(str.slice(lastIndex, match.index))
+        );
+      }
+
+      // The URL itself as a clickable link
+      const url = match[0];
+      const a = document.createElement("a");
+      a.href = url;
+      a.target = "_blank";
+      a.rel = "noreferrer";
+      a.textContent = url;
+      line.appendChild(a);
+
+      lastIndex = urlRegex.lastIndex;
+    }
+
+    // Any remaining text after the last URL
+    if (lastIndex < str.length) {
+      line.appendChild(document.createTextNode(str.slice(lastIndex)));
+    }
+
     return line;
   }
 
