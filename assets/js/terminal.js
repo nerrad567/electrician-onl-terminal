@@ -148,9 +148,9 @@ Delivery style
     contact: `
 Contact
 
-• GitHub:         https://github.com/nerrad567
 • Terminal CV:    https://terminal.electrician.onl
-• Root portfolio: https://electrician.onl  (manager-friendly landing, later)
+• Root overview:  https://electrician.onl
+• GitHub:         https://github.com/nerrad567
 
 Email / LinkedIn are intentionally not hard-coded here.
 They can be wired in as you decide how you want to be contacted for roles
