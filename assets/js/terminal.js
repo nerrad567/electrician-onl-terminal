@@ -170,12 +170,14 @@ Contact & links
 
 Primary places to explore
 • Terminal CV (this site):   https://terminal.electrician.onl
-• Manager/overview view:     https://electrician.onl
+• Portfolio / overview:      https://electrician.onl
+• Electrical business site:  https://www.graylogic.uk
+• Local landing (Colchester): https://colchester.electrician.onl
 • GitHub (code & tooling):   https://github.com/nerrad567
 
 Direct contact
-• Email and phone are shared with serious opportunities rather than hard-coded in the UI.
-• This keeps spam down and lets contact details evolve without stale copies in code.
+• Business enquiries can go via Gray Logic (website contact form + public contact details).
+• This keeps the terminal CV focused on technical context rather than chasing every spam bot on the internet.
 
 Future wiring
 • A dedicated CV download endpoint (PDF) can sit behind the 'cv' command here.
@@ -194,7 +196,10 @@ Available commands
 • clear      — clear the screen.
 
 Tip: on desktop, use ↑↓ to browse your command history.
-On mobile, tap the chips under the prompt to run commands quickly.`,
+On mobile, tap the chips under the prompt to run commands quickly.
+
+Also try 'contact' for links to the business, portfolio, and this terminal.
+`,
   };
 
   // -----------------------------
