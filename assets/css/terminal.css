@@ -37,7 +37,9 @@ body {
 main {
   width: 100%;
   max-width: 900px;
-  margin: auto;
+  margin: 0;
+  display: flex;
+  flex: 1 1 auto; /* <- grow to fill body height */
 }
 
 /* Screen reader only */
