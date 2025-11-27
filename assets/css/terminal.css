@@ -274,16 +274,20 @@ main > section {
   width: 100%;
   font-size: 0.82rem;
   line-height: 1.4;
-  padding: 0.14rem 0.9rem 0.1rem;
+  /* keep a bit of horizontal padding, minimal vertical so it hugs the baseline */
+  padding: 0.06rem 0.6rem 0.02rem;
   color: var(--text);
-  /* very close to background, just a touch lighter */
-  background: #090909;
-  /* almost invisible border – mainly there for focus */
-  border: 1px solid #101010;
-  border-radius: 3px;
+
+  /* blend into the terminal until active */
+  background: transparent;
+
+  /* no box border, just a faint underline */
+  border: none;
+  border-bottom: 1px solid #151515;
+
+  border-radius: 0;
   outline: none;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease,
-    background 0.15s ease;
+  transition: border-bottom-color 0.15s ease, background 0.15s ease;
 }
 
 .prompt-input::placeholder {
@@ -291,9 +295,14 @@ main > section {
 }
 
 .prompt-input:focus-visible {
-  border-color: #333;
-  box-shadow: 0 0 0 1px #222;
-  background: #0c0c0c;
+  /* still basically same bg, just a hair brighter */
+  background: rgba(0, 0, 0, 0.4);
+
+  /* stronger underline on focus */
+  border-bottom-color: #666;
+
+  /* no glow box */
+  box-shadow: none;
 }
 
 /* Hint on its own line, below the input */
