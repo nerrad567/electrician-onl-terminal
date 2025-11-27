@@ -264,19 +264,77 @@ main > section {
   }
 }
 
-.prompt-input-wrapper {
-  flex: 1;
-  position: relative;
+.prompt-row {
+  position: sticky;
+  bottom: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.35rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--border);
+  background: linear-gradient(
+    to top,
+    rgba(5, 5, 5, 0.98),
+    rgba(5, 5, 5, 0.9) 60%,
+    transparent
+  );
+  backdrop-filter: blur(8px);
 }
 
+/* Prompt line: label + input on one CLI-style row */
+.prompt-form {
+  display: flex;
+  align-items: baseline; /* align text baselines, not box centres */
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.prompt-label {
+  font-size: 0.82rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.prompt-user,
+.prompt-path {
+  color: var(--muted);
+}
+
+.prompt-cursor {
+  display: inline-block;
+  width: 0.6rem;
+  text-align: center;
+}
+
+.blink {
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Wrapper holds input + hint stacked vertically */
+.prompt-input-wrapper {
+  flex: 1;
+}
+
+/* CLI-like input: flatter, same baseline as label */
 .prompt-input {
   width: 100%;
-  padding: 0.4rem 0.75rem;
-  font: inherit;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  padding: 0.14rem 0.55rem 0.1rem;
   color: var(--text);
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.9);
   border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
+  border-radius: 4px;
   outline: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease,
     background 0.15s ease;
@@ -292,52 +350,15 @@ main > section {
   background: rgba(0, 0, 0, 0.95);
 }
 
-/* Hint sits on its own line, not affecting vertical alignment */
+/* Hint on its own line, below the input, not overlapping chips */
 .prompt-hint {
-  position: absolute;
-  left: 0;
-  top: 100%;
-  margin-top: 0.15rem;
+  margin-top: 0.18rem;
   font-size: 0.7rem;
   color: var(--muted);
 }
 
-.prompt-form {
-  display: flex;
-  align-items: center; /* align label + input vertically */
-  gap: 0.5rem;
-}
-
-.prompt-label {
-  font-size: 0.82rem;
-  line-height: 1.4;
-  white-space: nowrap;
-}
-
-/* Wrapper holds the input; hint is positioned below it */
-.prompt-input-wrapper {
-  flex: 1;
-  position: relative;
-  padding-bottom: 0.9rem; /* make room for the hint line below */
-}
-
-/* CLI-like input: flatter, aligned with label */
-.prompt-input {
-  width: 100%;
-  font-size: 0.82rem;
-  line-height: 1.4;
-  padding: 0.14rem 0.55rem 0.1rem; /* small vertical padding */
-  color: var(--text);
-  background: rgba(0, 0, 0, 0.9);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  outline: none;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease,
-    background 0.15s ease;
-}
-
 .command-suggestions {
-  margin-top: 0.35rem;
+  margin-top: 0.55rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;
