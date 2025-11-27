@@ -13,7 +13,7 @@
   // -----------------------------
   const sections = {
     about: `
-Darren Gray — electrician-turned infrastructure / systems / OT engineer running real Linux and Docker platforms for his own business.
+Darren Gray — an electrician-turned infrastructure / systems / OT engineer running real Linux and Docker platforms for his own business.
 
 • Strong electrical foundation: domestic and small commercial work, EICRs, board changes, BS 7671 compliance.
 • Runs a production Odoo 18 ERP stack for Gray Logic Electrical (CRM, jobs, invoicing) on a self-managed Linux VPS.
@@ -35,7 +35,7 @@ DevOps & Infrastructure
 • Linux (Debian/Ubuntu): service management, systemd, logs, permissions, backup/restore workflows.
 • Docker & Docker Compose: multi-service stacks, persistent volumes, networks, health-aware design.
 • Reverse proxy & routing: Traefik/nginx with TLS for Odoo and web services, deliberate routing and minimal surface area.
-• Self-hosted platforms: Odoo ERP, content services, monitoring-style stacks on VPS and home lab.
+• Self-hosted platforms: Odoo ERP, content services, and monitoring-style stacks on VPS and home lab.
 
 Networking & Security
 • WireGuard VPN: remote access and site-to-site, “VPN-first” network design.
@@ -166,8 +166,7 @@ How he works
 • Honest about unknowns and comfortable asking the right questions instead of guessing.
 
 Download full CV (PDF)
--> https://electrician.onl/assets/docs/darren-gray-cv.pdf
-  (Update this URL to wherever you host the latest CV).`,
+-> https://terminal.electrician.onl/assets/docs/cv_ICT_FULL.pdf`,
 
     contact: `
 Contact & links
@@ -183,17 +182,17 @@ Direct contact
 • Email: darren@graylogic.uk
 • Phone: +44 (0)7749 962 690
 
-For business enquiries you can also use the contact routes on graylogic.uk.
+Business enquiries can also go via graylogic.uk, where the public contact details live.
 This keeps the terminal CV focused on technical context while still making it easy to reach out.`,
 
     help: `
 Available commands
 
-• about      — who is Darren and what is this terminal?
-• skills     — technical & working-style overview.
+• about      — who is Darren and what this terminal is about.
+• skills     — technical skills and how he works.
 • experience — recent work and how it maps to infra/OT/DevOps.
 • projects   — GitHub highlight reel with links.
-• cv         — role snapshot + link to full downloadable CV.
+• cv         — role snapshot + link to the full downloadable CV.
 • contact    — how to explore further and reach out.
 • demo       — toggle the “demo reel” side panel (future video/animation).
 • clear      — clear the screen.
@@ -203,6 +202,7 @@ On mobile, tap the chips under the prompt to run commands quickly.
 
 Also try 'projects' for code and 'cv' for a hiring-manager-friendly snapshot.`,
   };
+
   // -----------------------------
   // Rendering helpers
   // -----------------------------
@@ -307,7 +307,7 @@ Also try 'projects' for code and 'cv' for a hiring-manager-friendly snapshot.`,
     if (key === "demo") {
       printSectionTitle("demo");
       printRaw(
-        "Toggling demo panel. In production this would show short clips of live stacks (Odoo ERP, secure-media-lab, usb-verifier, ssh-login-helper, clamp-to-cloud) in use."
+        "Toggling demo panel. This area is for a short reel showing real tools in action (secure-media-lab, graylogic-erp-site, usb-verifier, ssh-login-helper). For now it plays a generic terminal/server loop while the final montage is prepared."
       );
       toggleDemoPanel(true);
       return;
