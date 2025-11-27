@@ -389,7 +389,7 @@ Also try 'projects' for code and 'cv' for a hiring-manager-friendly snapshot.`,
     const value = inputEl.value;
     handleCommand(value);
     inputEl.value = "";
-    inputEl.focus();
+    // Do NOT focus input here – let the user tap it if they want
   });
 
   inputEl.addEventListener("keydown", (evt) => {
@@ -417,7 +417,7 @@ Also try 'projects' for code and 'cv' for a hiring-manager-friendly snapshot.`,
       evt.preventDefault();
       const cmd = btn.getAttribute("data-command") || "";
       handleCommand(cmd);
-      // No inputEl.focus() here – chips run commands without pulling up the keyboard
+      // IMPORTANT: no inputEl.focus() here
     });
   });
 
@@ -427,6 +427,6 @@ Also try 'projects' for code and 'cv' for a hiring-manager-friendly snapshot.`,
 
   window.addEventListener("load", () => {
     boot();
-    inputEl.focus();
+    // No auto-focus on load; avoids mobile keyboard popping up
   });
 })();
