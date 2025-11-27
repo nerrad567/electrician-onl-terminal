@@ -292,39 +292,45 @@ main > section {
   background: rgba(0, 0, 0, 0.95);
 }
 
+/* Hint sits on its own line, not affecting vertical alignment */
 .prompt-hint {
+  position: absolute;
+  left: 0;
+  top: 100%;
   margin-top: 0.15rem;
   font-size: 0.7rem;
   color: var(--muted);
 }
 
-/* CLI-style prompt: align input with label and reduce bubble feel */
 .prompt-form {
-  align-items: center; /* keep label + input on same vertical line */
+  display: flex;
+  align-items: center; /* align label + input vertically */
+  gap: 0.5rem;
 }
 
 .prompt-label {
-  display: flex;
-  align-items: center;
-  font-size: 0.8rem;
-  line-height: 1.2;
-  margin-right: 0.4rem;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  white-space: nowrap;
 }
 
+/* Wrapper holds the input; hint is positioned below it */
 .prompt-input-wrapper {
   flex: 1;
+  position: relative;
+  padding-bottom: 0.9rem; /* make room for the hint line below */
 }
 
-/* CLI-style input: flatter, same baseline as label */
+/* CLI-like input: flatter, aligned with label */
 .prompt-input {
   width: 100%;
   font-size: 0.82rem;
   line-height: 1.4;
-  padding: 0.12rem 0.55rem 0.08rem; /* small vertical padding */
+  padding: 0.14rem 0.55rem 0.1rem; /* small vertical padding */
   color: var(--text);
   background: rgba(0, 0, 0, 0.9);
   border: 1px solid var(--border);
-  border-radius: 4px; /* subtle, not pill */
+  border-radius: 4px;
   outline: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease,
     background 0.15s ease;
