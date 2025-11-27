@@ -408,6 +408,31 @@ main > section {
   outline: none;
 }
 
+/* Mobile layout tweaks for the header */
+@media (max-width: 600px) {
+  .terminal-header {
+    flex-wrap: wrap;
+    row-gap: 0.25rem;
+  }
+
+  .terminal-title {
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 0.35rem;
+  }
+
+  .terminal-header-right {
+    flex-basis: 100%;
+    text-align: center;
+    white-space: normal; /* allow wrapping */
+    font-size: 0.68rem;
+  }
+
+  .terminal-header-sep {
+    margin: 0 0.18rem;
+  }
+}
+
 /* Layout tweaks for larger screens */
 @media (min-width: 640px) {
   .terminal-header {
