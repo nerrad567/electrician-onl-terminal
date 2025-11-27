@@ -229,7 +229,7 @@ main > section {
 .prompt-form {
   display: flex;
   align-items: baseline; /* align text baselines */
-  gap: 0.5rem;
+  gap: 0.25rem;
   margin: 0;
 }
 
@@ -270,16 +270,17 @@ main > section {
   flex: 1;
 }
 
-/* CLI-like input: flatter, subtle background, almost invisible border */
 .prompt-input {
   width: 100%;
   font-size: 0.82rem;
   line-height: 1.4;
-  padding: 0.14rem 0.9rem 0.1rem; /* extra L/R padding */
+  padding: 0.14rem 0.9rem 0.1rem;
   color: var(--text);
-  background: #101010; /* subtle contrast with shell */
-  border: 1px solid #151515; /* very low-contrast border */
-  border-radius: 4px;
+  /* very close to background, just a touch lighter */
+  background: #090909;
+  /* almost invisible border – mainly there for focus */
+  border: 1px solid #101010;
+  border-radius: 3px;
   outline: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease,
     background 0.15s ease;
@@ -292,7 +293,7 @@ main > section {
 .prompt-input:focus-visible {
   border-color: #333;
   box-shadow: 0 0 0 1px #222;
-  background: #111;
+  background: #0c0c0c;
 }
 
 /* Hint on its own line, below the input */
