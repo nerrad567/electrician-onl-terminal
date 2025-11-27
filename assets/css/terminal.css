@@ -212,63 +212,8 @@ main > section {
 .prompt-row {
   position: sticky;
   bottom: 0;
-  padding-top: 0.5rem;
-  padding-bottom: 0.1rem;
-  margin-top: 0.5rem;
-  border-top: 1px solid var(--border);
-  background: linear-gradient(
-    to top,
-    rgba(5, 5, 5, 0.98),
-    rgba(5, 5, 5, 0.9) 60%,
-    transparent
-  );
-  backdrop-filter: blur(8px);
-}
-
-.prompt-form {
-  display: flex;
-  align-items: baseline; /* align text baselines, not centres */
-  gap: 0.5rem;
-}
-.prompt-label {
-  display: inline-block;
-  font-size: 0.82rem;
-  line-height: 1.4;
-  white-space: nowrap;
-  margin-right: 0.25rem;
-}
-
-.prompt-user,
-.prompt-path {
-  color: var(--muted);
-}
-
-.prompt-cursor {
-  display: inline-block;
-  width: 0.6rem;
-  text-align: center;
-}
-
-.blink {
-  animation: blink 1s steps(2, start) infinite;
-}
-
-@keyframes blink {
-  0%,
-  49% {
-    opacity: 1;
-  }
-  50%,
-  100% {
-    opacity: 0;
-  }
-}
-
-.prompt-row {
-  position: sticky;
-  bottom: 0;
-  padding-top: 0.5rem;
-  padding-bottom: 0.35rem;
+  /* top, horizontal, bottom */
+  padding: 0.55rem 0.9rem 0.75rem;
   margin-top: 0.5rem;
   border-top: 1px solid var(--border);
   background: linear-gradient(
@@ -283,7 +228,7 @@ main > section {
 /* Prompt line: label + input on one CLI-style row */
 .prompt-form {
   display: flex;
-  align-items: baseline; /* align text baselines, not box centres */
+  align-items: baseline; /* align text baselines */
   gap: 0.5rem;
   margin: 0;
 }
@@ -325,21 +270,23 @@ main > section {
   flex: 1;
 }
 
+/* CLI-like input: flatter, subtle background, almost invisible border */
 .prompt-input {
   width: 100%;
   font-size: 0.82rem;
   line-height: 1.4;
-  /* more left/right padding, same vertical so alignment stays good */
-  padding: 0.14rem 0.9rem 0.1rem;
+  padding: 0.14rem 0.9rem 0.1rem; /* extra L/R padding */
   color: var(--text);
-  /* very subtle contrast vs parent background */
-  background: #101010; /* parent is ~#050505–#0d0d0d */
-  /* almost invisible border, just enough to hint a field */
-  border: 1px solid #151515;
+  background: #101010; /* subtle contrast with shell */
+  border: 1px solid #151515; /* very low-contrast border */
   border-radius: 4px;
   outline: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease,
     background 0.15s ease;
+}
+
+.prompt-input::placeholder {
+  color: #555;
 }
 
 .prompt-input:focus-visible {
@@ -348,17 +295,7 @@ main > section {
   background: #111;
 }
 
-.prompt-input::placeholder {
-  color: #555;
-}
-
-.prompt-input:focus-visible {
-  border-color: #666;
-  box-shadow: 0 0 0 1px #444;
-  background: rgba(0, 0, 0, 0.95);
-}
-
-/* Hint on its own line, below the input, not overlapping chips */
+/* Hint on its own line, below the input */
 .prompt-hint {
   margin-top: 0.18rem;
   font-size: 0.7rem;
