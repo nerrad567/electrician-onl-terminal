@@ -413,10 +413,11 @@ Also try 'projects' for code and 'cv' for a hiring-manager-friendly snapshot.`,
   });
 
   document.querySelectorAll("[data-command]").forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (evt) => {
+      evt.preventDefault();
       const cmd = btn.getAttribute("data-command") || "";
       handleCommand(cmd);
-      inputEl.focus();
+      // No inputEl.focus() here – chips run commands without pulling up the keyboard
     });
   });
 
