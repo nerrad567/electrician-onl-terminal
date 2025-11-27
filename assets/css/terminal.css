@@ -296,6 +296,33 @@ main > section {
   color: var(--muted);
 }
 
+/* CLI-style prompt: align input with label and reduce bubble feel */
+.prompt-form {
+  align-items: center; /* keep label + input on same vertical line */
+}
+
+.prompt-label {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  margin-right: 0.4rem;
+}
+
+.prompt-input-wrapper {
+  flex: 1;
+}
+
+/* Make the input more like a CLI field, less like a big chat pill */
+.prompt-input {
+  font-size: 0.8rem;
+  line-height: 1.2;
+  padding: 0.22rem 0.55rem 0.18rem; /* smaller vertical padding */
+  border-radius: 6px; /* less round than the global pill */
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid var(--border);
+}
+
 .command-suggestions {
   margin-top: 0.35rem;
   display: flex;
