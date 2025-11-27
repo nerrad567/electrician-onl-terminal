@@ -15,7 +15,7 @@
     about: `
 Darren Gray — an electrician-turned infrastructure / systems / OT engineer running real Linux and Docker platforms for his own business.
 
-• Strong electrical foundation: domestic and small commercial work, EICRs, board changes, BS 7671 compliance.
+• Strong electrical foundation: domestic, commercial & light industrial work, EICRs, board changes, BS 7671 compliance.
 • Runs a production Odoo 18 ERP stack for Gray Logic Electrical (CRM, jobs, invoicing) on a self-managed Linux VPS.
 • Built and operates a secure home/remote lab with VPN-only access, hardened firewalls, and encrypted backups.
 • Writes practical tooling in PowerShell, Bash, and Python: usb-verifier, ssh-login-helper, secure-media-lab automation, and more.
