@@ -325,19 +325,27 @@ main > section {
   flex: 1;
 }
 
-/* CLI-like input: flatter, same baseline as label */
 .prompt-input {
   width: 100%;
   font-size: 0.82rem;
   line-height: 1.4;
-  padding: 0.14rem 0.55rem 0.1rem;
+  /* more left/right padding, same vertical so alignment stays good */
+  padding: 0.14rem 0.9rem 0.1rem;
   color: var(--text);
-  background: rgba(0, 0, 0, 0.9);
-  border: 1px solid var(--border);
+  /* very subtle contrast vs parent background */
+  background: #101010; /* parent is ~#050505–#0d0d0d */
+  /* almost invisible border, just enough to hint a field */
+  border: 1px solid #151515;
   border-radius: 4px;
   outline: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease,
     background 0.15s ease;
+}
+
+.prompt-input:focus-visible {
+  border-color: #333;
+  box-shadow: 0 0 0 1px #222;
+  background: #111;
 }
 
 .prompt-input::placeholder {
