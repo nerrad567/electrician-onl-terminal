@@ -227,13 +227,15 @@ main > section {
 
 .prompt-form {
   display: flex;
-  align-items: center;
+  align-items: baseline; /* align text baselines, not centres */
   gap: 0.5rem;
 }
-
 .prompt-label {
-  font-size: 0.8rem;
+  display: inline-block;
+  font-size: 0.82rem;
+  line-height: 1.4;
   white-space: nowrap;
+  margin-right: 0.25rem;
 }
 
 .prompt-user,
@@ -313,14 +315,19 @@ main > section {
   flex: 1;
 }
 
-/* Make the input more like a CLI field, less like a big chat pill */
+/* CLI-style input: flatter, same baseline as label */
 .prompt-input {
-  font-size: 0.8rem;
-  line-height: 1.2;
-  padding: 0.22rem 0.55rem 0.18rem; /* smaller vertical padding */
-  border-radius: 6px; /* less round than the global pill */
+  width: 100%;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  padding: 0.12rem 0.55rem 0.08rem; /* small vertical padding */
+  color: var(--text);
   background: rgba(0, 0, 0, 0.9);
   border: 1px solid var(--border);
+  border-radius: 4px; /* subtle, not pill */
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background 0.15s ease;
 }
 
 .command-suggestions {
