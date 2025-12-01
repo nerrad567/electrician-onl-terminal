@@ -321,7 +321,6 @@ Also try 'projects' for code and 'cv' for a hiring-manager-friendly snapshot.`,
 
   function toggleDemoPanel(forceVisible) {
     if (!demoPanel) return;
-    const video = document.getElementById("demo-video");
 
     const shouldShow =
       typeof forceVisible === "boolean"
@@ -330,17 +329,11 @@ Also try 'projects' for code and 'cv' for a hiring-manager-friendly snapshot.`,
 
     if (shouldShow) {
       demoPanel.classList.add("is-visible");
-      if (video) {
-        video.play().catch(() => {
-          // ignore autoplay failures (mobile etc.)
-        });
-      }
+      // Vimeo handles autoplay via URL params; no direct play() here.
     } else {
       demoPanel.classList.remove("is-visible");
-      if (video) {
-        video.pause();
-        video.currentTime = 0;
-      }
+      // We’re not controlling pause/seek on the iframe – fullscreen/controls
+      // are handled inside the Vimeo player.
     }
   }
 
