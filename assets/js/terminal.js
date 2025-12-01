@@ -329,11 +329,25 @@ Also try 'projects' for code and 'cv' for a hiring-manager-friendly snapshot.`,
 
     if (shouldShow) {
       demoPanel.classList.add("is-visible");
-      // Vimeo handles autoplay via URL params; no direct play() here.
+      setDemoVideoState("play");
     } else {
       demoPanel.classList.remove("is-visible");
-      // We’re not controlling pause/seek on the iframe – fullscreen/controls
-      // are handled inside the Vimeo player.
+      setDemoVideoState("pause");
+    }
+  }
+
+  function setDemoVideoState(action) {
+    // action: "play" or "pause"
+    const iframe = document.getElementById("demo-video");
+    if (!iframe || !iframe.contentWindow) return;
+
+    try {
+      iframe.contentWindow.postMessage(
+        JSON.stringify({ method: action }),
+        "https://player.vimeo.com"
+      );
+    } catch (e) {
+      // ignore if player not ready
     }
   }
 
