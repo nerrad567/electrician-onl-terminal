@@ -115,44 +115,37 @@
       </section>
     </main>
 
-    <!-- Slide-out panel for ambient demo reel / future walkthroughs -->
     <aside class="demo-panel" id="demo-panel" aria-label="Demo panel">
       <div class="demo-panel-title">demo reel</div>
 
       <div class="demo-video-wrapper">
-        <video
+        <iframe
           id="demo-video"
           class="demo-video"
-          autoplay
-          muted
-          loop
-          playsinline
-        >
-          <source
-            src="assets/media/Dark-mode_terminal_interface_booting_up_smooth_camera_move_into_abstract_server_racks_with_blinking_seed4085283224.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
+          src="https://player.vimeo.com/video/1142031262?background=1&autoplay=1&loop=1&muted=1"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          title="Demo reel – real infrastructure projects"
+        ></iframe>
       </div>
 
       <div class="demo-panel-body">
-        This panel is for a short reel showing real tools in action: terminals,
-        dashboards, and UIs cutting between different programs Darren actually
-        uses day to day.
+        This panel shows a short reel from systems I’ve designed, built, and
+        run: terminals, dashboards, and production UIs I use day to day.
         <br /><br />
-        The final video will showcase key systems such as:
+        The clips are taken from real projects, including:
         <br /><br />
         • <strong>secure-media-lab</strong> — secure home/remote lab with
-        VPN-only access<br />
-        • <strong>graylogic-erp-site</strong> — live Odoo 18 ERP for Gray Logic
-        Electrical<br />
+        VPN-only access and encrypted off-site backups<br />
+        • <strong>graylogic-erp-site</strong> — live Odoo 18 ERP and website for
+        Gray Logic Electrical<br />
         • <strong>usb-verifier</strong> — Windows install media integrity
         scanner (PowerShell)<br />
         • <strong>ssh-login-helper</strong> — interactive SSH launcher for
-        multi-host workflows <br /><br />
-        For now, the background video is a generic terminal/server loop. Run
-        <code>projects</code> to explore the code behind these tools.
+        multi-host workflows<br /><br />
+        Everything shown here is real, running infrastructure — not mockups. Run
+        <code>projects</code> to explore the code and setup behind these tools.
       </div>
 
       <div class="demo-panel-footer">
