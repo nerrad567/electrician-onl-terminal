@@ -346,13 +346,13 @@ main > section {
   background: rgba(255, 255, 255, 0.04);
 }
 
-/* Slide-out demo panel (for future video / animation) */
+/* Slide-out demo panel (video reel) */
 .demo-panel {
   position: fixed;
   left: 50%;
   top: 50%;
-  max-width: 720px;
-  width: min(720px, 100% - 2.5rem);
+  max-width: 900px;
+  width: min(900px, 100% - 2.5rem);
   background: radial-gradient(circle at top, #111 0, #050505 55%, #000 100%);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
@@ -368,16 +368,18 @@ main > section {
 
 .demo-video-wrapper {
   margin-bottom: 0.6rem;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--border);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
 }
 
+/* Vimeo iframe: full width, fixed aspect ratio */
 .demo-video {
   display: block;
   width: 100%;
-  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
 }
 
 /* When visible, slide into the centre */
